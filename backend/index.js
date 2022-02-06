@@ -58,13 +58,12 @@ app.get('/stats/', (req, res) => {
 //----------------------------------------------------------------------------------------------
 
 const port = process.env.PORT || 5000;
-const url=process.env.CONNECTION_URL
 
 // app.get('/', (req, res) => {
 //     res.send('hi') 
 // })
 
-const CONNECTION_URL = url
+const CONNECTION_URL = process.env.CONNECTION_URL
 
 if(process.env.NODE_ENV=='production'){
     app.use(express.static("precily-frontend/build"))
