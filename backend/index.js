@@ -4,8 +4,9 @@ import cors from 'cors'
 import boxRouter from './boxRoutes.js'
 import fs from 'fs'
 import dotenv from 'dotenv'
+import path from 'path'
 
-dotenv.config()
+dotenv.config({ path: path.resolve(__dirname, './.env') })
 const app = express()
 
 app.use(express.json({ extended: true, limit: '2mb' }))
