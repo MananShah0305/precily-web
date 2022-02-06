@@ -60,9 +60,9 @@ app.get('/stats/', (req, res) => {
 const port = process.env.PORT || 5000;
 const url=process.env.CONNECTION_URL
 
-app.get('/', (req, res) => {
-    res.send('hi') 
-})
+// app.get('/', (req, res) => {
+//     res.send('hi') 
+// })
 
 const CONNECTION_URL = url
 
