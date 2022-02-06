@@ -65,10 +65,6 @@ const port = process.env.PORT || 5000;
 
 const CONNECTION_URL = process.env.CONNECTION_URL
 
-if(process.env.NODE_ENV=='production'){
-    app.use(express.static("precily-frontend/build"))
-}
-
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         app.listen(port, () => {
@@ -76,6 +72,10 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
         })
     })
     .catch(err => console.log(err))
+
+if (process.env.NODE_ENV == 'production') {
+    app.use(express.static("precily-frontend/build"))
+}
 
 app.use('/box', boxRouter)
 
