@@ -6,7 +6,9 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 import path from 'path'
 
-dotenv.config({ path: path.resolve(__dirname, './.env') })
+const __dirname = path.resolve()
+
+dotenv.config({ path: path.join(__dirname, '.env') })
 const app = express()
 
 app.use(express.json({ extended: true, limit: '2mb' }))
