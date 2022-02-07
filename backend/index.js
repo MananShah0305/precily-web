@@ -67,12 +67,15 @@ const port = process.env.PORT || 5000;
 mongoose.connect('mongodb+srv://Manan:lDpyefd0L73rWhnD@cluster0.ppwx9.mongodb.net/precilyBackend?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
 
 if (process.env.NODE_ENV == 'production') {
-    app.use(express.static(path.join(__dirname, '/client/build')))
+    app.use(express.static(path.join(__dirname, '/precily-frontend/build')))
+    // app.get('*', (req,res) => {
+    //     res.sendFile(path.join(__dirname, '/client/dist', 'index.html'))
+    //   })
 }
 
-app.get('/',(req,res)=>{
-    res.status('200').json('Hi')
-})
+// app.get('/',(req,res)=>{
+//     res.status('200').json('Hi')
+// })
 
 app.use('/box', boxRouter)
 
