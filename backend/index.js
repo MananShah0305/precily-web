@@ -77,7 +77,7 @@ mongoose.connect('mongodb+srv://Manan:lDpyefd0L73rWhnD@cluster0.ppwx9.mongodb.ne
     .catch(err => console.log(err))
 
 if (process.env.NODE_ENV == 'production') {
-    app.use(express.static("precily-frontend/build"))
+    app.use(express.static(path.join(__dirname, '/client/build')))
 }
 
 app.use('/box', boxRouter)
