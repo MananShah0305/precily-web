@@ -69,16 +69,14 @@ const port = process.env.PORT || 5000;
 // const CONNECTION_URL = 'mongodb+srv://Manan:lDpyefd0L73rWhnD@cluster0.ppwx9.mongodb.net/precilyBackend?retryWrites=true&w=majority'
 
 mongoose.connect('mongodb+srv://Manan:lDpyefd0L73rWhnD@cluster0.ppwx9.mongodb.net/precilyBackend?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        app.listen(port, () => {
-            console.log('Server listening on port:', port)
-        })
-    })
-    .catch(err => console.log(err))
 
 if (process.env.NODE_ENV == 'production') {
     app.use(express.static(path.join(__dirname, '/client/build')))
 }
 
+
 app.use('/box', boxRouter)
 
+app.listen(port, () => {
+    console.log('Server listening on port:', port)
+})

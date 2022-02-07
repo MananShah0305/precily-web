@@ -1,5 +1,5 @@
 {
-  "homepage":"https://MananShah0305.github.io/Precily",
+  "homepage": "https://MananShah0305.github.io/Precily",
   "name": "precily-frontend",
   "version": "0.1.0",
   "private": true,
@@ -17,13 +17,14 @@
     "react-bootstrap-sweetalert": "^5.2.0",
     "react-dom": "^17.0.2",
     "react-file-base64": "^1.0.3",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-split": "^2.0.14",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -b main -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
